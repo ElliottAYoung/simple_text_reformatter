@@ -1,43 +1,17 @@
 # SimpleTextReformatter
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/simple_text_reformatter`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'simple_text_reformatter'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install simple_text_reformatter
+This was a gem I created to be a pure ruby way of __very__ simple reformatting of text, I built it so I could use it in a different project, but feel free to use it wherever you want.
 
 ## Usage
 
-TODO: Write usage instructions here
+As I need them I will continue to add more reformat types to this gem, but for now it does an extremely simple phone number reformatting. To use this you just need to call:
 
-## Development
+```
+SimpleTextReformatter.format_as_phone_number('1234567890')
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/simple_text_reformatter. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the SimpleTextReformatter project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/simple_text_reformatter/blob/master/CODE_OF_CONDUCT.md).
+This follows a few basic rules:
+* The Phone Number will reformat to `(123) 456-7890`
+* If a region code (really just '1' for now) is passed in it will get chopped off: `"11234567890" => "(123) 456-7890"
+* Any additional numbers passed after will be included as an extension: `"12345678901234" => "(123) 456-7890 x1234" 
+* Any nondigits passed in will be excluded
