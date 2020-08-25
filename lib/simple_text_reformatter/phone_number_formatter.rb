@@ -1,5 +1,3 @@
-require 'pry'
-
 module SimpleTextReformatter
   class PhoneNumberFormatter
     def initialize(base_phone_number_string)
