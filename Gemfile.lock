@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simple_text_reformatter (1.0.2)
+    simple_text_reformatter (1.0.2.1)
       money
 
 GEM
