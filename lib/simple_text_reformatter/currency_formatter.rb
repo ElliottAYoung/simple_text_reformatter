@@ -1,6 +1,6 @@
 require 'money'
 
-Money.locale_backend = nil
+Money.locale_backend = :currency
 Money.default_infinite_precision = false
 
 module SimpleTextReformatter
